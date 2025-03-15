@@ -9,18 +9,20 @@ const Dashboard = () => {
     <>
       <Header insideDashboard={true} />
       <div style={{ paddingTop: "20px" }} className="container-fluid">
-        <div className="d-flex justify-content-between">
+
+        <div className="row">
+          <div className="col-lg-8">
           <h1>
             Welcome <span className="text-warning">User,</span>{" "}
           </h1>
-          <Profile />
-        </div>
-        <div className="row">
-          <div className="col-lg-8">
-            <ViewProject />
+          <ViewProject />
           </div>
-          <div className="col-lg-4"></div>
+          <div className="col-lg-4">
+          <Profile />
+          </div>
         </div>
+
+       
       </div>
     </>
   );

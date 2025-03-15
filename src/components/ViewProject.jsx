@@ -13,12 +13,12 @@ const ViewProject = () => {
       <div className="mt-2">
         <div className="p-2 border rounded d-flex justify-content-between">
           <h2>Title</h2>
-          <div>
-            <div className="btn">
+          <div className="d-flex">
+            <div>
               <EditProject />
             </div>
             <div className="btn">
-              <a href="https://github.com/sarathlalnb/portfolio">
+              <a target="blank" href="https://github.com/sarathlalnb/portfolio">
                 {" "}
                 <i class="fa-brands fa-github"></i>{" "}
               </a>

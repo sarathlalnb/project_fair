@@ -1,0 +1,27 @@
+---------------MONGODB----------------------
+
+DATABASE:-  Used to store/manage data permenantly(MySql,SQl,PgSQL,Oracle)
+MongoDb :- It is a No SQL Database, data stored as JSON Documents.It is stored in memory as BSON ({"key":"value"}), To store multiple JSON document is known as collection.
+
+diff b/w sql and MongoDb
+
+  ----------SQL----------             -----------MongoDb----------
+1. Relational SQL DBMS                1. Document oriented NoSQl DB
+2.data stored in Table, every         2.Data stored in collection,as 
+table has rows and columns            JSON document  
+3. Fixed Schema                       3. Dynamic Schema
+4. Optimised for complex join and     4. Opmtimised for scalability 
+transaction                              and perfomance.
+
+MongoDB in the following environments:
+
+MongoDB Atlas  : The fully managed service for MongoDB deployments in the cloud
+
+MongoDB Enterprise  : The subscription-based, self-managed version of MongoDB
+
+MongoDB Community  : The source-available, free-to-use, and self-managed version of MongoDB
+
+
+->Mongosh is an interactive command-line interface for MongoDB.It allows developers to interact with a mongodb database, run queries, manage collections, etc.
+
+

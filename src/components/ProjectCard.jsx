@@ -2,8 +2,9 @@
 import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import Modal from 'react-bootstrap/Modal';
+import baseURL from "../../services/baseUrls";
 
-const ProjectCard = () => {
+const ProjectCard = ({project}) => {
 
     const [show, setShow] = useState(false);
 
@@ -17,10 +18,10 @@ const ProjectCard = () => {
         <Card.Img
           height={"200px"}
           variant="top"
-          src="https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07184649/ProjectManagement.jpg"
+          src={`${baseURL}/uploads/${project?.projectImg}`}
         />
         <Card.Body>
-          <Card.Title>Project 1</Card.Title>
+          <Card.Title>{project?.projectTitle}</Card.Title>
         </Card.Body>
       </Card>
 
@@ -31,17 +32,17 @@ const ProjectCard = () => {
         <Modal.Body>
             <div className="row">
                 <div className="col-lg-6">
-                    <img className="img-fluid" src="https://s3-ap-south-1.amazonaws.com/static.awfis.com/wp-content/uploads/2017/07/07184649/ProjectManagement.jpg" alt="" />
+                    <img className="img-fluid" src={`${baseURL}/uploads/${project?.projectImg}`} alt="" />
                 </div>
                 <div className="col-lg-6">
-                    <h3>Project Heading</h3>
-                    <h6>Languages Used : <span className="text-warning fw-bolder" >js, html </span></h6>
-                    <p style={{textAlign:'justify'}}> <span className="fw-bolder">Project Overview :</span> Lorem ipsum dolor, sit amet conseuscipit ducimus culpa quaerat, quos maiores, laboriosam enim ipsam veniam nam aliquid. Quis, a!</p>
+                    <h3>{project?.projectTitle}</h3>
+                    <h6>Languages Used : <span className="text-warning fw-bolder" >{project?.projectLanguge} </span></h6>
+                    <p style={{textAlign:'justify'}}> <span className="fw-bolder">Project Overview :</span> {project?.projectOverview}</p>
                 </div>
             </div>
             <div className="float-start mt-3">
-                <a href="https://github.com/sarathlalnb/PerformanceTracker" className="btn btn-secondary"><i className="fa-brands fa-github"></i></a>
-                <a href="https://github.com/sarathlalnb/PerformanceTracker" className="btn btn-secondary ms-2"><i className="fa-solid fa-link"></i></a>
+                <a href={project?.projectGitLink} className="btn btn-secondary"><i className="fa-brands fa-github"></i></a>
+                <a href={project?.projectWebsiteLink} className="btn btn-secondary ms-2"><i className="fa-solid fa-link"></i></a>
             </div>
         </Modal.Body>
       </Modal>

@@ -1,9 +1,19 @@
 // rafce
-import React from "react";
+import React, { useContext } from "react";
 import { Navbar, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { loginContext } from "../contexts/AuthContext";
+
+
 
 const Header = ({ insideDashboard }) => {
+  const {isLoggedIn,setIsLoggedIn} = useContext(loginContext)
+
+ const onLogoutClick = ()=>{
+  sessionStorage.clear();
+  setIsLoggedIn(false)
+ }
+
   return (
     <Navbar className="border shadow " sticky="top">
       <Container>
@@ -13,7 +23,7 @@ const Header = ({ insideDashboard }) => {
           </Navbar.Brand>
         </Link>
         {insideDashboard && (
-          <button className="btn btn-link fw-bold">
+          <button onClick={onLogoutClick} className="btn btn-link fw-bold">
             Logout <i class="fa-solid fa-right-from-bracket"></i>
           </button>
         )}

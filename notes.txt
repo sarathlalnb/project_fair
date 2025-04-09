@@ -24,4 +24,32 @@ MongoDB Community  : The source-available, free-to-use, and self-managed version
 
 ->Mongosh is an interactive command-line interface for MongoDB.It allows developers to interact with a mongodb database, run queries, manage collections, etc.
 
+->collection:- used to store json documents,to name a collection use small letters in its plural format.
+
+->MongoDb generates a unique value to identify each doxument in a collection using 
+  _id key its value is a hexadecimal number.
+
+  basic commands in mongodb
+
+  1)use dbname:-  to change to desired db
+  2)show collections :- to show all the collections in a db
+  3)db.createCollection("collection_name) :- to create a new collection
+  4)db.collection_name.drop() :- to delete a collection
+  5)db.collection_name.find() :- to get/read all the documents in a collection
+
+
+    we can get documents by applying different query statements using $ symbol:
+       $gt - greaterthan, $gte,$lt,$lte,$eq,$neq,$exists,$regex,$options
+
+
+  6)db.collection_name.findOne({key:value}) :- to get/read one specific document in a collection/if not present it will return null.
+  7)db.collection_name.insertone({"key":"value"}) :- To insert a single document to mongodb collection
+  8)db.collection_name.insertMany([{"key":"value"}]) :- To insert a multiple document to mongodb collection
+  9)db.collection_name.countDocuments() :- to get the number of documents in a collection
+  10)db.collection_name.find().limit(count) :- to limit documents while getting from a collection
+  11)db.collection_name.find().skip(count) :- to skip documents while getting from a collection
+  12)db.collection_name.find().sort({key:1/-1}) :- to sort document while getting from a collection, 1 represents ascending, -1 represents descending
+  13)db.collection_name.updateOne({key:value},{$set : {key:value}}) :- to update a single document
+    we can use operators like $set, $inc to update.
+  14)db.collection_name.updateMany({key:value}//condition,{$set:{key:value}}):- to update a multiple documents
 
